@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>465</x>
+      <y>460</y>
+      <w>175</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>Order
+Package::Models
+--
+-OrderID: serial
+-timeOfOrder: timeStamp
+-completionStatus: string (delivered, ready, in_progress,
+	cancelled, confirmed, pending)
+-tableNo: int
+-menuID: OrderItem
+--
+Responsiblities
+-getter's and setters for all fields</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>150</y>
+      <w>105</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>OrderController
+Package::Controllers
+--
+orderService: OrderService
+--
+Responsibilities
+-- addOrder
+-- cancelOrder
+-- cancelOrder
+-- getStatus</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>290</y>
+      <w>150</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+OrderService
+Package::Services
+--
+-addOrder
+-changeStatus (delivered, ready, in_progress,
+	cancelled, confirmed, pending)
+-cancelOrder
+-getStatus
+-getAll()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>435</y>
+      <w>170</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Menu
+Package::Models
+--
+-menuID: serial
+-name: String
+-price: Money
+-description: String
+-calories: int
+-ingrediants: String
+-allergens: Boolean (one field for each allergen)
+--availability: Bool
+--
+Responsibilities
+-getters and setters for all fields</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>225</x>
+      <y>465</y>
+      <w>115</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>OrderItem
+Package::Models
+--
+-id: int
+-menuID: serial (foreign key)
+-orderID serial (foreign key)
+-quantity: int
+-notes: String
+--
+Responsibilities
+-getters and setters for all fields</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1035</x>
+      <y>425</y>
+      <w>105</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>Allergens
+Package::Models
+--
+-MenuID
+-Molluscs
+-Eggs
+-Fish
+-Lupin
+-Soya
+-Milk
+-Peanuts
+-Glutens
+-Crustaceans
+-Mustard
+-Nuts
+-Sesame
+-Celery
+-Suplhates
+--
+Responsibilities
+Getters and setters for all fields</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>405</y>
+      <w>105</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>OrderRespository
+Package::Repository
+{Some Properties}
+--
+extends JPARespository</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>365</y>
+      <w>15</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>565</x>
+      <y>240</y>
+      <w>15</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>415</x>
+      <y>380</y>
+      <w>15</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>330</y>
+      <w>40</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>290</y>
+      <w>125</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>MenuServiceImpl
+Package::Services
+--
+-menuRepository: MenyRepository
+--
+-addItem(Menu)
+-editItem(Menu)
+-deleteItem(Menu)
+-getAll()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>290</y>
+      <w>115</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>OrderServiceImpl
+Package::Services
+--
+-orderRepository: OrderRepository
+--
+Responsibilities
+-- addOrder
+-- changeStatus
+-- cancelOrder
+-- getStatus
+--getAll</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>290</y>
+      <w>105</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+MenuService
+Package::Services
+--
+-addItem(Menu)
+-editItem(Menu)
+-deleteItem(Menu)
+-getAll()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>865</x>
+      <y>420</y>
+      <w>105</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>MenuRespository
+Package::Repository
+{Some Properties}
+--
+extends JPARespository</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>365</y>
+      <w>15</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>915</x>
+      <y>365</y>
+      <w>15</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>325</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>695</x>
+      <y>160</y>
+      <w>105</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>MenuController
+Package::Controller
+--
+menuService: MenuService
+--
+-addItem(Menu)
+-editItem(Menu)
+-deleteItem(Menu)
+-getAll()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>745</x>
+      <y>235</y>
+      <w>15</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1035</x>
+      <y>295</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+AllergenService
+Package::Services
+--
+-getAll()
+-setAllergen(Menu, Allergen)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1085</x>
+      <y>355</y>
+      <w>15</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>295</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>AllergenServiceImpl
+Package::Services
+--
+-getAll()
+-setAllergen(Menu, Allergen)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1135</x>
+      <y>320</y>
+      <w>65</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1200</x>
+      <y>400</y>
+      <w>105</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>AllergenRespository
+Package::Repository
+{Some Properties}
+--
+extends JPARespository</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1240</x>
+      <y>355</y>
+      <w>15</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1040</x>
+      <y>175</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>AllergenController
+Package::Services
+--
+allergenService: AllergenService
+--
+-getAll()
+-setAllergen(Menu, Allergen)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1085</x>
+      <y>235</y>
+      <w>15</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>305</y>
+      <w>150</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+OrderItemService
+Package::Services
+--
+-addOrderItem(OrderItem)
+-removeOrderItem(OrderItem)
+-getAll(orderID)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>365</y>
+      <w>15</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>305</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>OrderItemServiceImpl
+Package::Services
+--
+orderItemRepository: OrderItemRepository
+--
+-addOrderItem(OrderItem)
+-removeOrderItem(OrderItem)
+-getAll(orderID)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>145</x>
+      <y>335</y>
+      <w>65</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>405</y>
+      <w>105</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>OrderItemRespository
+Package::Repository
+{Some Properties}
+--
+extends JPARespository</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>370</y>
+      <w>15</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>215</x>
+      <y>155</y>
+      <w>105</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>OrderItemController
+Package::Controllers
+--
+orderItemService: OrderItemService
+--
+Responsibilities
+-addOrderItem(OrderItem)
+-removeOrderItem(OrderItem)
+-getAll(orderID)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>265</x>
+      <y>245</y>
+      <w>15</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1370</x>
+      <y>450</y>
+      <w>105</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>AssistanceCalls
+Package::Models
+--
+-Assistanceid: Long
+-tableNo: int
+-timeSet- time
+--
+Responsibilities
+-- Getters and setters for all fields</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1370</x>
+      <y>295</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+AssistanceService
+Package::Services
+--
+-getAll()
+-setAssistance(tableNo, time)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1515</x>
+      <y>295</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>AssistanceServiceImpl
+Package::Services
+--
+-getAll()
+-setAssistance(tableNo, time)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1510</x>
+      <y>430</y>
+      <w>105</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>AssistanceRespository
+Package::Repository
+{Some Properties}
+--
+extends JPARespository</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1415</x>
+      <y>355</y>
+      <w>15</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1555</x>
+      <y>355</y>
+      <w>15</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1465</x>
+      <y>325</y>
+      <w>60</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1360</x>
+      <y>165</y>
+      <w>105</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>AssistantController
+Package::Services
+--
+assistanceService: AssistantService
+--
+-getAll()
+-setAssistance(tableNo, time)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1420</x>
+      <y>225</y>
+      <w>15</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+</diagram>

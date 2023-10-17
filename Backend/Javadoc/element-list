@@ -1,0 +1,8 @@
+cs2810.group30.oaxacabackend
+cs2810.group30.oaxacabackend.controller
+cs2810.group30.oaxacabackend.models
+cs2810.group30.oaxacabackend.repository
+cs2810.group30.oaxacabackend.security
+cs2810.group30.oaxacabackend.security.request
+cs2810.group30.oaxacabackend.security.response
+cs2810.group30.oaxacabackend.services

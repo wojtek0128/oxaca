@@ -1,0 +1,13 @@
+{
+  "tsconfig": "tsconfig.json",
+  "entryPoints": ["./pages/**", "./components/**", "./components/**.tsx", "./pages/api",
+    "./pages/kitchen/*", "./pages/waiter/*",  "./components/homepage/*", "./components/kitchen/*", "./components/order/*",
+    "./components/waiter/*", "./components/kitchen/cancelled/*", "./components/kitchen/inProgress/*",
+    "./components/waiter/assistance/*"],
+  "out": "docs",
+  "exclude": ["**/*.test.ts", "**/*.test.tsx"],
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "readme": "none"
+}

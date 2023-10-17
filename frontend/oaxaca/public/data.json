@@ -1,0 +1,82 @@
+[
+    {
+        "ID": 1,
+        "title": "Taco Al Pastor",
+        "description": "A delicious taco filled with marinated pork, pineapple, and spices, served on a warm corn tortilla",
+        "type": "Meat",
+        "price": 3.99,
+        "status": true
+    },
+    {
+        "ID": 2,
+        "title": "Veggie Quesadilla",
+        "description": "A quesadilla filled with mixed vegetables and cheese, grilled to perfection",
+        "type": "Vegetarian",
+        "price": 5.99,
+        "status": true
+    },
+    {
+        "ID": 3,
+        "title": "Guacamole and Chips",
+        "description": "A classic dish made with fresh avocados, lime juice, and spices, served with a side of crispy tortilla chips",
+        "type": "Vegan",
+        "price": 4.99,
+        "status": true
+    },
+    {
+        "ID": 4,
+        "title": "Chicken Burrito",
+        "description": "A hearty burrito filled with tender shredded chicken, rice, beans, cheese, and salsa",
+        "type": "Meat",
+        "price": 7.99,
+        "status": true
+    },
+    {
+        "ID": 5,
+        "title": "Black Bean Tacos",
+        "description": "Soft corn tortillas filled with spiced black beans, cheese, lettuce, and salsa",
+        "type": "Vegetarian",
+        "price": 5.49,
+        "status": true
+    },
+    {
+        "ID": 6,
+        "title": "Enchiladas Verdes",
+        "description": "Rolled tortillas filled with chicken, cheese, and topped with a green chili sauce",
+        "type": "Meat",
+        "price": 8.99,
+        "status": true
+    },
+    {
+        "ID": 7,
+        "title": "Chimichangas",
+        "description": "Fried burritos filled with shredded beef or chicken, beans, and cheese",
+        "type": "Meat",
+        "price": 9.99,
+        "status": true
+    },
+    {
+        "ID": 8,
+        "title": "Nachos Supreme",
+        "description": "Tortilla chips topped with melted cheese, diced tomatoes, jalapenos, and your choice of meat or beans",
+        "type": "Vegetarian",
+        "price": 8.49,
+        "status": true
+    },
+    {
+        "ID": 9,
+        "title": "Chiles Rellenos",
+        "description": "Roasted poblano peppers filled with cheese, battered and fried, topped with a mild tomato sauce",
+        "type": "Vegetarian",
+        "price": 9.99,
+        "status": true
+    },
+    {
+        "ID": 10,
+        "title": "Pico de Gallo",
+        "description": "A fresh salsa made with diced tomatoes, onions, cilantro, lime juice, and jalapenos",
+        "type": "Vegan",
+        "price": 3.99,
+        "status": true
+    }
+]
